@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Software Citation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+    <h1>Software Citation</h1>
+    <p>Generate a <a href="http://citation-file-format.github.io/citation-file-format" target="_blank">CFF</a> file for your software</p>
+
+    <form id = "form">
+      <div class="form-group">
+        <label for="githubUrl">GitHub Repository URL</label>
+        <input type="url" class="form-control" id="githubUrl" aria-describedby="githubUrl" placeholder="Enter URL">
+      </div>
+      <div class="form-group">
+          <label for="zenodoToken">Zenodo Access Token</label>
+          <input type="text" class="form-control" id="zenodoToken" aria-describedby="zenodoToken" placeholder="Enter access token">
+          <small>You can generate a token <a href="https://zenodo.org/account/settings/applications/tokens/new/" target="_blank">here</a>. We do not store your token.</small>
+      </div>
+      <div class="form-group">
+        <label for="version">Version</label>
+        <input type="url" class="form-control" id="version" aria-describedby="version" placeholder="Enter URL">
+      </div>
+      <button type="submit" class="btn btn-primary" id="submitBtn">Generate CFF</button>
+      <div class="spinner-border text-primary" role="status" id="spinner">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div id="message"></div>
+    </form>
+
+    <div id="success">
+      <h3>Your CFF has been generated successfully!</h3>
+      <h4>Next steps:</h4>
+      <ul>
+        <li>Upload CFF to your GitHub repository in the root folder</li>
+        <li>Upload Zenodo JSON to your GitHub repository in the root folder</li>
+        <li>Release a new version (make sure it is the version you mentioned in CFF)</li>
+        <li>Connect your DOI with the release through Zenodo</li>
+      </ul>
+      <div id="downloadBtns">
+        <form id="downloadCFF" action="#" target="_blank">
+          <button type="submit" class="btn btn-primary" id="downloadBtn">Download CFF</button>
+        </form>
+        <form id="downloadJSON" action="#" target="_blank">
+          <button type="submit" class="btn btn-primary" id="downloadBtn">Download JSON</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
